@@ -1,0 +1,336 @@
+/* 电脑端1200px的版心 */
+
+.rc-pcpage {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 移动端添加页面跳转过渡动画的前置样式 */
+
+.rc-mpage {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* 浮动与清除浮动 */
+
+.rc-fl {
+    float: left;
+}
+
+.rc-fr {
+    float: right;
+}
+
+.rc-clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 单行文本移除隐藏，并在结尾显示省略号 */
+
+.rc-sline {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 2行文本移除隐藏，并在结尾显示省略号 */
+.rc-dline {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* 宽度占满 */
+
+.rc-wcover {
+    width: 100%;
+}
+
+/* 高度占满 */
+
+.rc-hcover {
+    height: 100%;
+}
+
+/* flex快速布局 */
+
+/* 垂直居中 */
+
+.rc-dfaic {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+/* 水平居中 */
+
+.rc-dfjcc {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+}
+
+/* 水平垂直居中 */
+
+.rc-dfaicjcc {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 垂直居中，水平两端对齐 */
+
+.rc-dfaicjcsb {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 透明遮罩层*/
+
+.rc-mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9;
+}
+
+/* 背景色 */
+
+/* 白色背景 */
+
+.rc-bcf {
+    background-color: #fff;
+}
+
+/* 纯黑色背景 */
+.rc-bc0 {
+    background-color: #fff;
+}
+
+/* 黑色透明度80%背景 */
+
+.rc-bc08 {
+    background-color: rgba(255, 255, 255, .8)
+}
+
+/* 黑色透明度50%背景 */
+
+.rc-bc05 {
+    background-color: rgba(255, 255, 255, .5)
+}
+
+/* 黑色透明度30%背景 */
+
+.rc-bc03 {
+    background-color: rgba(255, 255, 255, .3)
+}
+
+/* 333颜色的背景 */
+.rc-bc3 {
+    background-color: #333;
+}
+
+/* 666颜色的背景 */
+.rc-bc6 {
+    background-color: #666;
+}
+
+/* 999颜色的背景 */
+.rc-bc9 {
+    background-color: #999;
+}
+
+/* ccc颜色的背景 */
+.rc-bcc {
+    background-color: #ccc;
+}
+
+/* eee颜色的背景 */
+.rc-bce {
+    background-color: #eee;
+}
+
+/* 文本颜色 */
+
+/* 白色文字 */
+
+.rc-cw {
+    color: #fff;
+}
+
+/* color: rgb(51, 51, 51); */
+
+.rc-c3 {
+    color: #333;
+}
+
+/* color: rgb(102, 102, 102); */
+
+.rc-c6 {
+    color: #666;
+}
+
+/* color: rgb(153, 153, 153); */
+
+.rc-c9 {
+    color: #999;
+}
+
+/* color: rgb(204, 204, 204); */
+
+.rc-cc {
+    color: #ccc;
+}
+
+/* color: rgb(238, 238, 238); */
+
+.rc-ce {
+    color: #eee;
+}
+
+/* 隐藏元素 */
+
+.rc-hide {
+    display: none;
+}
+
+/* 显示元素 */
+
+.rc-show {
+    display: block;
+}
+
+/* 普通边框和极细边框 */
+.rc-border {
+    position: relative;
+}
+
+.rc-border-bc0::after {
+    background-color: #000;
+}
+
+.rc-border-bc3::after {
+    background-color: #333;
+}
+
+.rc-border-bc6::after {
+    background-color: #666;
+}
+
+.rc-border-bc9::after {
+    background-color: #999;
+}
+
+.rc-border-bcc::after {
+    background-color: #ccc;
+}
+
+.rc-border-bce::after {
+    background-color: #eee;
+}
+
+.rc-border-top::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+}
+
+.rc-border-bottom::after {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+}
+
+.rc-border-left::after {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+}
+
+.rc-border-right::after {
+    right: 0;
+    height: 100%;
+    width: 1px;
+    top: 0;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.0) {
+    .rc-border::after {
+        content: '';
+        position: absolute;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2.0) {
+    .rc-border::after {
+        content: '';
+        position: absolute;
+    }
+
+    .rc-border-top::after {
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+
+    .rc-border-bottom::after {
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+
+    .rc-border-left::after {
+        -webkit-transform: scaleX(0.5);
+        transform: scaleX(0.5);
+    }
+
+    .rc-border-right::after {
+        -webkit-transform: scaleX(0.5);
+        transform: scaleX(0.5);
+    }
+}
+
+/* 3倍屏 */
+@media only screen and (-webkit-min-device-pixel-ratio: 3.0) {
+    .border::after {
+        content: '';
+        position: absolute;
+    }
+
+    .rc-border-top::after {
+        -webkit-transform: scaleY(0.33);
+        transform: scaleY(0.33);
+    }
+
+    .rc-border-bottom::after {
+        -webkit-transform: scaleY(0.33);
+        transform: scaleY(0.33);
+    }
+
+    .rc-border-left::after {
+        -webkit-transform: scaleX(0.33);
+        transform: scaleX(0.33);
+    }
+
+    .rc-border-right::after {
+        -webkit-transform: scaleX(0.33);
+        transform: scaleX(0.33);
+    }
+}

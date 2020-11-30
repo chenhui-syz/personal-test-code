@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?b71b59');
+  src:  url('fonts/icomoon.eot?b71b59#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?b71b59') format('truetype'),
+    url('fonts/icomoon.woff?b71b59') format('woff'),
+    url('fonts/icomoon.svg?b71b59#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: "\e900";
+}
+.icon-spinner:before {
+  content: "\e97a";
+}
+.icon-warning:before {
+  content: "\ea07";
+}
+.icon-plus:before {
+  content: "\ea0a";
+}
+.icon-cross:before {
+  content: "\ea0f";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+}
+.icon-backward2:before {
+  content: "\ea1f";
+}
+.icon-forward3:before {
+  content: "\ea20";
+}
+.icon-circle-right:before {
+  content: "\ea42";
+}
+.icon-circle-left:before {
+  content: "\ea44";
+}

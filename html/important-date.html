@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 月份
+         * set日期的时候，实际月份-1
+         * get日期的时候，将获取到的月份+1
+         */
+        // 恋爱纪念日：2017年1月24号
+        const loveDay = [2017, 0, 24]
+        // 2021年恋爱纪念日
+        const loveDay2021 = [2021, 0, 24]
+        // 结婚纪念日，2017年，农历10月26日，阳历12月13号
+        const marryDay = [2017, 11, 13]
+        // 2020年结婚纪念日（农历）
+        const marryDay2020 = [2020, 11, 10]
+        // 兰兰出生日期，1992年，农历8月18日，阳历9月14号
+        const llBirthday = [1992, 8, 14]
+        // 兰兰2021年生日=>9月24号
+        const llBirthday2021 = [2021, 8, 24]
+        // 辉辉出生日期,1991年，农历7月1日，阳历8月10号
+        const hhBirthday = [1991, 7, 10]
+        // 辉辉2021年生日=>8月8号
+        const hhBirthday2021 = [2021, 7, 8]
+        // 睿睿出生日期,农历2017年12月10日（腊月初十），阳历2018年1月26号
+        const rrBirthday = [2018, 0, 26]
+        // 睿睿2020年生日=>2021年1月22号
+        const rrBirthday2020 = [2021, 0, 22]
+        // 丞丞出生日期,2019年，农历7月27日，阳历8月27号
+        const ccBirthday = [2019, 7, 27]
+        // 丞丞2021年生日=>9月3号
+        const ccBirthday2021 = [2021, 8, 3]
+        // 2021年目标开始时间
+        const targetStartDateIn2021ForHH = [2021, 3, 1]
+
+        function getDayNumber(y, m, d) {
+            // 一天的毫秒数
+            const millisecondOneDay = 86400000
+            // 当天日期0点距离1970年1月1日的毫秒数
+            const currentDay = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()).getTime()
+            const msParam = new Date(y, m, d).getTime()
+            if (msParam < currentDay) {
+                let dayCount = (currentDay - msParam) / millisecondOneDay
+                return `${dayCount}天`
+            } else {
+                let dayCount = (msParam - currentDay) / millisecondOneDay
+                return `${dayCount}天`
+            }
+        }
+
+        function getTimeInterval(y, m, d) {
+            const nowDateYear = new Date().getFullYear()
+            const nowDateMonth = new Date().getMonth()
+            const nowDateDate = new Date().getDate()
+            let gapYear, gapMonth, gapDate
+            if (y <= nowDateYear) {
+                gapYear = nowDateYear - y
+            } else {
+                console.log('只接受比当前日期更早的日期')
+                return
+            }
+            if (m <= nowDateMonth) {
+                gapMonth = nowDateMonth - m
+            } else {
+                gapYear = gapYear - 1
+                gapMonth = (12 - m) + nowDateMonth
+            }
+            if (d <= nowDateDate) {
+                gapDate = nowDateDate - d
+            } else {
+                gapMonth = gapMonth - 1
+                gapDate = (30 - d) + nowDateDate
+            }
+            return {
+                gapYear,
+                gapMonth,
+                gapDate,
+                gapText: `${gapYear}年${gapMonth}个月${gapDate}天`
+            }
+        }
+
+        console.log('已相恋', getDayNumber(...loveDay), getTimeInterval(...loveDay).gapText)
+        console.log('距离2021年的恋爱纪念日还有', getDayNumber(...loveDay2021))
+        console.log('已结婚', getDayNumber(...marryDay), getTimeInterval(...marryDay).gapText)
+        console.log('距离2020年的结婚纪念日还有', getDayNumber(...marryDay2020))
+        console.log('睿宝宝年龄', getTimeInterval(...rrBirthday).gapText)
+        console.log('丞宝宝年龄', getTimeInterval(...ccBirthday).gapText)
+        console.log('2021目标开始时间', getDayNumber(...targetStartDateIn2021ForHH))
+
+        /*
+         * 爸爸农历10月29日
+         * 妈妈农历3月15日
+         * 奶奶农历二月初十
+         * 爷爷农历四月二十
+         */
+    </script>
+</body>
+
+</html>
