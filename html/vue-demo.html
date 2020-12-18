@@ -14,6 +14,7 @@
             <input type="text" v-model="firstName">
             <input type="text" v-model="lastName">
         </div>
+        <p v-text="transform"></p>
         <demo-component></demo-component>
 
     </div>
@@ -34,7 +35,8 @@
             el: "#app",
             data: {
                 firstName: 'zhang',
-                lastName: 'san'
+                lastName: 'san',
+                transform:'\d'
             },
             methods: {
 
