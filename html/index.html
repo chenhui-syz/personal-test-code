@@ -3,28 +3,46 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>demo</title>
+	<title>DEMO</title>
+	<script src="http://mockjs.com/dist/mock.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="./mock.js"></script>
 	<style type="text/css">
 	</style>
 </head>
 
 <body>
-	<div class="demo">
+	<div class="demo-wrapper">
+		<span class="app">点击</span>
 	</div>
 	<script>
-		let a = 'yanycaitest202009281652.con/19911226\123'
-		let addFormrule = `http://${a}`
-		let obj = {
-			debug_url: [],
-			open_version: "1",
-			path: "pages/index/index ",
-			permit_sub_rule: "2",
-			prefix: addFormrule,
-			pro_type: "3",
-			pro_type_case: "1",
+		let data = Mock.mock({
+			"list|3-10": [{
+				"id|+1": 1,
+				"name": "@cname"
+			}]
+		})
+		console.log('data:', JSON.stringify(data, null, 2))
+		let random = Mock.Random
+		let friends = ['小张', '小王', '小李', '小陈']
+		let data2 = {
+			email: random.email(),
+			image: random.image('200x100', '#00405d', '#fff', 'Mock.js'),
+			name: random.cname(),
+			url: random.url(),
+			address: random.city(),
+			bestfriend: random.pick(friends)
 		}
-		obj.prefix = obj.prefix.replace('/\\/g', '/')
-		console.log(JSON.stringify(obj))
+		console.log('data2:', JSON.stringify(data2, null, 2))
+		$(".app").click(function () {
+			$.ajax({
+				url: "yourdomain.com/getlist",
+				type: 'get',
+				dataType: 'json'
+			}).done(function (data, status, xhr) {
+				console.log(data, null, 2)
+			})
+		})
 	</script>
 </body>
 
