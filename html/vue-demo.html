@@ -10,13 +10,10 @@
 <body>
     <div id="app">
         <div id="demo">
-            <!-- <p> {{ fullName }} </p> -->
-            <input type="text" v-model="firstName">
-            <input type="text" v-model="lastName">
+            <div v-for="(item,index) in demoArr" :key="index">{{item}}</div>
         </div>
-        <p v-text="transform"></p>
+        <button @click="changeArr">dianwo</button>
         <demo-component></demo-component>
-
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
@@ -34,19 +31,16 @@
         var app = new Vue({
             el: "#app",
             data: {
-                firstName: 'zhang',
-                lastName: 'san',
-                transform:'\d'
+                demoArr: [1, 2, 3, 4, 5]
             },
-            methods: {
 
-            },
-            computed: {
-                fullName: function () {
-                    console.log('computed getter...')
-                    return this.firstName + ' ' + this.lastName
+            methods: {
+                changeArr() {
+                    this.demoArr = [10, 20, 30, 40, 50]
+
                 }
             },
+            computed: {},
             updated() {
                 console.log('updated')
             }

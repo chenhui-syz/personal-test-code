@@ -12,37 +12,10 @@
 </head>
 
 <body>
-	<div class="demo-wrapper">
-		<span class="app">点击</span>
-	</div>
 	<script>
-		let data = Mock.mock({
-			"list|3-10": [{
-				"id|+1": 1,
-				"name": "@cname"
-			}]
-		})
-		console.log('data:', JSON.stringify(data, null, 2))
-		let random = Mock.Random
-		let friends = ['小张', '小王', '小李', '小陈']
-		let data2 = {
-			email: random.email(),
-			image: random.image('200x100', '#00405d', '#fff', 'Mock.js'),
-			name: random.cname(),
-			url: random.url(),
-			address: random.city(),
-			bestfriend: random.pick(friends)
-		}
-		console.log('data2:', JSON.stringify(data2, null, 2))
-		$(".app").click(function () {
-			$.ajax({
-				url: "yourdomain.com/getlist",
-				type: 'get',
-				dataType: 'json'
-			}).done(function (data, status, xhr) {
-				console.log(data, null, 2)
-			})
-		})
+		let arr =[1,2,3,4,5,6]
+		arr.splice(1,1,'xxxx')
+		console.log(arr)
 	</script>
 </body>
 
